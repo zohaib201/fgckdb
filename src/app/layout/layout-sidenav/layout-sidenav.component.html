@@ -1,0 +1,25 @@
+<sidenav [orientation]="orientation" [ngClass]="getClasses()">
+
+    <!-- Inner -->
+    <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
+
+        <sidenav-router-link icon="ion ion-ios-contact" route="/" [active]="isActive('/')">Home</sidenav-router-link>
+        <sidenav-router-link icon="ion ion-md-done-all" route="/member_from_app" [active]="isActive('/member_from_app')">Approve & Add Members </sidenav-router-link>
+        <!-- <sidenav-router-link icon="ion ion-md-person-add" route="/fgck-form/create/:id" [active]="isActive('/fgck-form/create/:id')">Add Member</sidenav-router-link> -->
+        <sidenav-router-link icon="ion ion-md-people" route="/fgck-form" [active]="isActive('/fgck-form')">FGCK Members</sidenav-router-link>
+        <sidenav-router-link icon="fas fa-praying-hands" route="/prayer" [active]="isActive('/prayer')">Prayer List</sidenav-router-link>
+        <sidenav-router-link icon="fas fa-video" route="/video" [active]="isActive('/video')">Video Library</sidenav-router-link>
+        <sidenav-router-link icon="fas fa-volume-up" route="/audio" [active]="isActive('/audio')">Audio Library</sidenav-router-link>
+        <sidenav-router-link icon="icon ion-ios-book" route="/devotional" [active]="isActive('/devotional')">Devotionals</sidenav-router-link>
+        <sidenav-router-link icon="icon ion-md-calendar" route="/event" [active]="isActive('/event')">Events</sidenav-router-link>
+      <sidenav-router-link icon="icon ion-ios-notifications" route="/notification" [active]="isActive('/notification')">PUSH Notifications </sidenav-router-link>
+<!--      <sidenav-router-link icon="icon ion-md-checkmark-circle-outline" route="/survey" [active]="isActive('/survey')">Survey</sidenav-router-link>-->
+<!--        <sidenav-router-link icon="icon ion-md-folder" route="/Survey_Reports" [active]="isActive('/Survey_Reports')">Survey Reports</sidenav-router-link>-->
+      <sidenav-router-link icon="icon ion-md-cash" route="/report" [active]="isActive('/report')">Financial Reports </sidenav-router-link>
+<!--      <sidenav-router-link icon="icon ion-md-cash" route="/homephoto" [active]="isActive('/homephoto')">homephoto</sidenav-router-link>-->
+<!--      <sidenav-router-link icon="icon ion-md-cash" route="/incharge" [active]="isActive('/incharge')">incharge</sidenav-router-link>-->
+      <sidenav-router-link icon="icon ion-ios-images" route="/getimage" [active]="isActive('/getimage')">Home page image</sidenav-router-link>
+      <sidenav-router-link icon="icon ion-ios-person" route="/getincharge" [active]="isActive('/getincharge')">Minister Incharge</sidenav-router-link>
+
+    </div>
+</sidenav>

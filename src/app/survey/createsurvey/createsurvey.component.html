@@ -1,0 +1,22 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Create Question
+</h4>
+<label style="margin-left:20px"> Label </label><br>
+<div class="form-group col-md-5 col-sm-5 col-sm-5 col-lg-5">
+  <input type="text" [(ngModel)]="memberData.statement" name="radiolabel" placeholder="Add Label"  class="form-control"  />
+</div>
+
+<div>
+  <button (click)="add()" class="btn btn-success  " style="margin-left: 12px;width: 19%;"> Add Radio btn</button>
+  <button (click)="save()" class="btn btn-success  " style="width: 20%;" >Save</button>
+
+</div>
+
+<div *ngFor="let add of radioplusbtn ; index as i" class="col-md-5 col-sm-5 col-sm-5 col-lg-5"><!--For loop start here-->
+   <div class="form-group">
+    <i class="fa fa-times" aria-hidden="true" style="float: right;margin-right: -30px;margin-top: 32px;" (click)="decreamentradio(i)"></i>
+     <br>
+    <input type="text" [(ngModel)]="add.statement" name="data{{add.id}}" placeholder="Type"class="form-control" id="raddio" required />
+
+  </div>
+</div>

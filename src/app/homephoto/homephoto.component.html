@@ -1,0 +1,43 @@
+<script src="homephoto.component.ts"></script><h4 class="font-weight-bold py-3 mb-4">
+  Add Minister Incharge
+</h4>
+
+<div class="row">
+  <div class="offset-2  col-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="cui-example">
+          <br>
+          <form>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Name</b></label>
+                <input type="text" class="form-control" placeholder="Name" name="address" [(ngModel)]="data.name" >
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Description</b></label>
+                <input type="text" class="form-control" placeholder="About" name="address" [(ngModel)]="data.description" >
+              </div>
+            </div>
+
+            <br>
+            <label class="form-label"><b>Minister Incharge Photo</b></label>
+            <div>
+              <label>
+                <input type="file" (change)="onLoadImage($event)">
+              </label>
+            </div>
+            <br> <br>
+            <button type="button" class="btn btn-primary float-right" (click)="add()">Add Minister Incharge</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

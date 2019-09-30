@@ -1,0 +1,40 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Update Video
+</h4>
+
+<div class="row">
+    <div class="col-8 offset-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="cui-example">
+                    <form>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Description</label>
+                                <input type="text" class="form-control" placeholder="Description" name="status" [(ngModel)]="videoData.description">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Video URL</label>
+                                <input type="text" class="form-control" placeholder="Video URL" name="statustwo" [(ngModel)]="videoData.videoUrl">
+                            </div>
+                        </div>
+
+
+                            <label class="form-label">Select Image</label>
+                      <br>
+                        <input type="file"  (change)="onLoadImage($event)">
+
+
+                        <br> <br>
+                        <button type="button" (click)="onUpdateProduct()" class="btn btn-primary float-right">Update Video</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,40 @@
+<div>
+  <h4 class="font-weight-bold py-3 mb-4">
+    Approve & Add Members
+  </h4>
+  <div class="spinner-border" *ngIf="(localMemberFromAppData.length === 0)"
+       style="display: block;margin: auto"></div>
+  <br>
+  <div class="card">
+    <table class="table card-table table table-hover">
+      <thead class="thead-light">
+      <tr>
+        <th>#</th>
+        <th>Member Name</th>
+        <th>Email</th>
+        <th>Phone No</th>
+        <th>Approval Status</th>
+        <th>Action</th>
+        <!-- <th>Reject</th> -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let memberFromApp of localMemberFromAppData; index as i">
+        <td>{{i+1}}</td>
+        <td>{{memberFromApp.name}}</td>
+        <td>{{memberFromApp.email}}</td>
+        <td>{{memberFromApp.phno}}</td>
+        <td *ngIf="memberFromApp.isApproved"><span class="badge badge-outline-success" *ngIf="memberFromApp.isApproved" >Approved</span></td>
+        <td *ngIf="!memberFromApp.isApproved"><span class="badge badge-outline-warning" *ngIf="!memberFromApp.isApproved"> Pending</span></td>
+        <td>
+          <a *ngIf="!memberFromApp.isApproved" routerLink="/fgck-form/create/{{memberFromApp.id}}">
+            <i  class="fas fa-check" style="padding-left: 15px; color:#30a86c;font-size:17px"></i>
+          </a>
+          <i *ngIf="memberFromApp.isApproved" class="fas fa-ban" style="padding-left: 15px; color:#fc5a5c;font-size:17px"></i>
+        </td>
+        <!-- <td><button class="btn btn-danger" style="padding: 2px 12px" (click)="del(memberFromApp.id)">Cancel</button></td> -->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

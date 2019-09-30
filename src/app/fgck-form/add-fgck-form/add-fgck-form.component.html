@@ -1,0 +1,181 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Add Member
+</h4>
+
+<div class="row">
+  <div class="offset-2  col-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="cui-example">
+          <div class="spinner-border" *ngIf="(dropdownListForCellGroup.length === 0)"
+               style="display: block;margin: auto"></div>
+          <br>
+          <form>
+              <label class="form-label"><b>Cell Group Details (with Cell leader info.).</b></label>
+            <ng-multiselect-dropdown [placeholder]="'Select Cell Group'" [data]="dropdownListForCellGroup" [(ngModel)]="selectedCellGroup"
+              [settings]="dropdownSettingsForCellGroup" (onSelect)="onCellGroupSelect($event)" (onSelectAll)="onCellGroupAll($event)"
+              style="margin-bottom: 100px" name="muliselect" (onDeSelect)="onCellGroupDeSelect($event)">
+
+            </ng-multiselect-dropdown>
+            <br>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Name of Member</b></label>
+                <input [(ngModel)]="memberData.memberName" type="text" class="form-control" placeholder="Name of Member" name="Name of Spouse">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Name of Spouse</b></label>
+                <input [(ngModel)]="memberData.nameofSpouse" type="text" class="form-control" placeholder="Name of Spouse" name="Name of Spouse">
+              </div>
+            </div>
+
+
+
+            <label class="form-label"><b>Names of Children</b></label>
+            <div *ngFor="let array of store;index as i" id="input">
+              <i class="fa fa-window-close" aria-hidden="true" style="float: right;" (click)="dismiss(i)"></i>
+              <label class="form-label">Child {{array.id}}</label>
+              <input type="text" class="form-control" placeholder="Child {{array.id}}" name="Child {{array.id}}"
+                [(ngModel)]="array.value">
+                <br>
+            </div>
+
+            <br><br>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <button type="button" (click)="add()" class="btn btn-primary float-left">Add Child</button>
+                </div>
+
+              </div>
+
+            <label class="form-label"><b>Names of Grand Children</b></label>
+            <div *ngFor="let arrayy of store1;index as j" id="input">
+              <i class="fa fa-window-close" aria-hidden="true" style="float: right;" (click)="dismiss1(j)"></i>
+              <label class="form-label">Grand Child {{arrayy.id}}</label>
+              <input type="text" class="form-control" placeholder="Grand Child {{arrayy.id}}" name="Grand Child {{arrayy.id}}"
+                [(ngModel)]="arrayy.value">
+                <br>
+            </div>
+
+            <br><br>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                  <button type="button" (click)="add1()" class="btn btn-primary float-left">Add Grand Child</button>
+              </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Landline - Kuwait</b></label>
+                <input [(ngModel)]="memberData.landlineKuwait" type="text" class="form-control" placeholder="Landline - Kuwait" name="Landline - Kuwait">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Primary Whatsapp Contact</b></label>
+                <input [(ngModel)]="memberData.primaryWhatsappContact" type="text" class="form-control" placeholder="Primary Whatsapp Contact" name="Primary Whatsapp Contact">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 1 - Kuwait </b></label>
+                <input [(ngModel)]="memberData.mobile1Kuwait" type="text" class="form-control" placeholder="Mobile 1 - Kuwait" name="Mobile 1 - Kuwait">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 2 - Kuwait</b> </label>
+                <input [(ngModel)]="memberData.mobile2Kuwait" type="text" class="form-control" placeholder="Mobile 2 - Kuwait" name="Mobile 2 - Kuwait">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Landline - International</b></label>
+                <input [(ngModel)]="memberData.landlineInternational" type="text" class="form-control" placeholder="Landline - International" name="Landline - International">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 1 - International</b></label>
+                <input [(ngModel)]="memberData.mobile1International" type="text" class="form-control" placeholder="Mobile 1 - International" name="Mobile 1 - International">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 2 - International</b></label>
+                <input [(ngModel)]="memberData.mobile2International" type="text" class="form-control" placeholder="Mobile 2 - International" name="Mobile 2 - International">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Email ID 1</b></label>
+                <input [(ngModel)]="memberData.emailID1" type="text" class="form-control" placeholder="Email ID 1" name="Email ID 1">
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Email ID 2</b></label>
+                <input [(ngModel)]="memberData.emailID2" type="text" class="form-control" placeholder="Email ID 2" name="Email ID 2">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Address</b></label>
+                <input [(ngModel)]="memberData.address" type="text" class="form-control" placeholder="address" name="address">
+              </div>
+            </div>
+
+            <br>
+            <label class="form-label"><b>Family Photo</b></label>
+            <div>
+              <label>
+                <input type="file" (change)="onLoadImage($event)">
+              </label>
+            </div>
+            <br> <br>
+            <button type="button" (click)="onCreateMember()" class="btn btn-primary float-right">Add Member</button>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<!--
+<div class="row">
+  <div class="col-6">
+
+
+    <div *ngFor="let array of store;index as i" id="input">
+        <i class="fa fa-window-close" aria-hidden="true" style="float: right;" (click)="dismiss(i)"></i>
+      <label class="form-label">Child {{array.id}}</label>
+      <input type="text" class="form-control" placeholder="Location {{array.id}}" name="location" [(ngModel)]="array.value">
+    </div>
+
+    <br><br>
+
+    <div>
+      <button type="button" (click)="add()" class="btn btn-primary float-left">Add Input</button>
+    </div><br><br><br>
+
+    <div>
+      <button type="button" (click)="save()" class="btn btn-primary float-left">Submit</button>
+    </div>
+
+  </div>
+
+
+</div>  -->

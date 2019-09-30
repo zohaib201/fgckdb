@@ -1,0 +1,12 @@
+.name {
+    cursor: pointer;
+    color: grey
+}
+
+.name:hover {
+    color: red
+}
+
+.name:focus {
+    outline: none
+}

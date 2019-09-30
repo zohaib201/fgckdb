@@ -1,0 +1,156 @@
+<!-- <div class="container">
+<div class="row">
+  <div class="col-md-8">
+    <label for="test">sdkfjl</label>
+    <input type="text" placeholder="sldfjslj" class="form-control">
+  </div>
+</div>
+</div> -->
+
+
+
+<h4 class="font-weight-bold py-3 mb-4">
+  Update Member
+</h4>
+
+<div class="row">
+  <div class="offset-2  col-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="cui-example">
+          <form #form = "ngForm">
+            <label class="form-label"><b>Cell Group Details (with Cell leader info.).</b></label>
+            <ng-multiselect-dropdown name="cellGroup" [placeholder]="'Select Cell Group'" [data]="dropdownListForCellGroup" [(ngModel)]="selectedCellGroup"
+                                     [settings]="dropdownSettingsForCellGroup" (onSelect)="onCellGroupSelect($event)" (onSelectAll)="onCellGroupAll($event)"
+                                     style="margin-bottom: 100px" name="muliselect" (onDeSelect)="onCellGroupDeSelect($event)" required  >
+
+            </ng-multiselect-dropdown  >
+            <!-- <br>
+            <label class="form-label"><b>Member Name </b></label>
+            <ng-multiselect-dropdown [placeholder]="'Select Member'" [data]="dropdownListForMember" [(ngModel)]="selectedMembers"
+              [settings]="dropdownSettingsFormMember" (onSelect)="onMemberSelect($event)" (onSelectAll)="onMemberAll($event)"
+              style="margin-bottom: 100px" name="muliselect" (onDeSelect)="onMemberDeSelect($event)">
+
+            </ng-multiselect-dropdown> -->
+            <br>
+            
+
+            <input type="hidden" name="recId" #recId="ngModel" [(ngModel)]="fgckFormService.formData.id" class="form-control"/>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Name of Member</b></label>
+                <input name="memberName" #memberName="ngModel" [(ngModel)]="fgckFormService.formData.name" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Name of Spouse</b></label>
+                <input name="nameofSpouse" #nameofSpouse="ngModel" [(ngModel)]="fgckFormService.formData.spouse" class="form-control" required>
+              </div>
+            </div>
+<!-- 
+
+
+            <label class="form-label"><b>Names of Children</b></label>
+
+            <div *ngFor="let child of fgckFormService.formData.children; let i = index">
+              <label class="form-label">Child{{i+1}}</label>
+              <input value="{{child.name}}" class="form-control" placeholder="Update Child Name" >
+              <br>
+
+            </div>
+
+            <br><br>
+
+
+            <label class="form-label"><b>Names of Grand Children</b></label>
+            <div *ngFor="let g_child of fgckFormService.formData.grand_children; let i = index">
+              <label class="form-label">Child{{i+1}}</label>
+              <input value="{{g_child.name}}" class="form-control" placeholder="Update Grand_Child Name" >
+              <br>
+
+            </div> -->
+
+            <br><br>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Landline - Kuwait</b></label>
+                <input name="landlineKuwait" #landlineKuwait="ngModel" [(ngModel)]="fgckFormService.formData.landline_kuwait" class="form-control" placeholder="Landline - Kuwait" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Primary Whatsapp Contact</b></label>
+                <input name="primaryWhatsappContact" #primaryWhatsappContact="ngModel" [(ngModel)]="fgckFormService.formData.primary_whatsapp" class="form-control" placeholder="Primary Whatsapp Contact" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 1 - Kuwait </b></label>
+                <input name="mobile1Kuwait" #mobile1Kuwait="ngModel" [(ngModel)]="fgckFormService.formData.mobile1_kuwait" class="form-control" placeholder="Mobile 1 - Kuwait" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 2 - Kuwait</b> </label>
+                <input name="mobile2Kuwait" #mobile2Kuwait="ngModel" [(ngModel)]="fgckFormService.formData.mobile2_kuwait" class="form-control" placeholder="Mobile 2 - Kuwait" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Landline - International</b></label>
+                <input name="landlineInternational" #landlineInternational="ngModel" [(ngModel)]="fgckFormService.formData.landline_international" class="form-control" placeholder="Landline - International" required>
+
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 1 - International</b></label>
+                <input name="mobile1International" #mobile1International="ngModel" [(ngModel)]="fgckFormService.formData.mobile1_international" class="form-control" placeholder="Mobile 1 - International" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Mobile 2 - International</b></label>
+                <input name="mobile2International" #mobile2International="ngModel" [(ngModel)]="fgckFormService.formData.mobile2_international" class="form-control" placeholder="Mobile 2 - International" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Email ID 1</b></label>
+                <input name="emailID1" #emailID1="ngModel" [(ngModel)]="fgckFormService.formData.email_id1" class="form-control" placeholder="Email ID 1" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label class="form-label"><b>Email ID 2</b></label>
+                <input name="emailID2" #emailID2="ngModel" [(ngModel)]="fgckFormService.formData.email_id2" class="form-control" placeholder="Email ID 2" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Address</b></label>
+                <input name="address" #address="ngModel" [(ngModel)]="fgckFormService.formData.address" class="form-control" placeholder="address" required>
+              </div>
+            </div>
+
+            <br>
+            <label class="form-label"><b>Family Photo</b></label>
+            <div>
+              <label>
+                <input type="file" (change)="onLoadImage($event)">
+              </label>
+            </div>
+            <br> <br>
+            <button type="button" (click)="onUpdateMember(form)" class="btn btn-primary float-right">Update Member</button>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

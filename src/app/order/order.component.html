@@ -1,0 +1,94 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Order
+</h4>
+
+
+
+<div class="card">
+
+    <table class="table card-table table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Status</th>
+                <th>Total Ammount</th>
+                <th>Discount</th>
+                <th>Package</th>
+                <th>Product</th>
+                <th>Venue</th>
+                <th>Deal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders; index as i">
+                <td>{{i+1}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.totalAmount}}</td>
+                <td>{{order.discount}}</td>
+                <!-- <td id="b"> <span *ngFor="let package of order.packages">
+            <span class="badge" id="badgee">{{package.name}}</span>
+                    </span>
+                </td>
+                <td id="b"> <span *ngFor="let product of order.products">
+            <span class="badge" id="badgee">{{product.name}}</span>
+                    </span>
+                </td>
+                <td id="b"><span *ngFor="let venue of order.venues">
+            <span class="badge" id="badgee">{{venue.name}}</span>
+                    </span>
+                </td>
+                <td id="b"> <span *ngFor="let deal of order.deals">
+            <span class="badge" id="badgee">{{deal.name}}</span>
+                    </span>
+                </td> -->
+                <td id="b">
+                    <span class="badge badge-outline-danger" *ngIf="order.packages.length === 0">N/A</span>
+                    <span *ngFor="let package of order.packages">
+            <a routerLink="/package/view/{{package.id}}" class="badge badge-outline-danger">{{package.name}}</a>
+          </span>
+                </td>
+
+                <td id="b">
+                    <span class="badge badge-outline-danger" *ngIf="order.products.length === 0">N/A</span>
+                    <span *ngFor="let product of order.products">
+            <a routerLink="/product/view/{{product.id}}" class="badge badge-outline-danger">{{product.name}}</a>
+          </span>
+                </td>
+
+                <td id="b">
+                    <span class="badge badge-outline-danger" *ngIf="order.venues.length === 0">N/A</span>
+                    <span *ngFor="let venue of order.venues">
+            <a routerLink="/venue/view/{{venue.id}}" class="badge badge-outline-danger">{{venue.name}}</a>
+          </span>
+                </td>
+
+
+                <td id="b">
+                    <span class="badge badge-outline-danger" *ngIf="order.deals.length === 0">N/A</span>
+                    <span *ngFor="let deal of order.deals">
+            <a routerLink="/deal/view/{{deal.id}}" class="badge badge-outline-danger">{{deal.name}}</a>
+          </span>
+                </td>
+
+                <td>
+                    <a routerLink="/order/update/{{order.id}}">
+                        <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+                    </a>
+
+                    <a routerLink="/order/view/{{order.id}}">
+                        <i class="fa fa-eye" aria-hidden="true" style="color:#fc5a5c;font-size:17px"></i>
+                    </a>
+                </td>
+
+
+
+
+
+
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

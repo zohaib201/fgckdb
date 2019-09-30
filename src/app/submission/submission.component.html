@@ -1,0 +1,31 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Survey Reports
+</h4> 
+
+
+
+<div class="card">
+
+    <table class="table card-table table table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Question Statement</th>
+            <th>No of User</th>
+            <th>Option</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let d of all; index as i">
+            <td>{{i+1}}</td>
+            <td>{{d.statement}}</td>
+            <td>{{d.numberAnswered}}</td>
+            <td id="b"><span *ngFor="let r of d.radios" >
+                    <span class="badge" id="badgee">{{r.statement}}  ( {{r.numberAnswered}} )</span>
+                    <span class="badge" id="badgee" *ngIf="r?.length <= 0">Null</span>
+                  </span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

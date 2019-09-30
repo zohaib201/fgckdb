@@ -1,0 +1,82 @@
+<div class="row" style="width:100%;margin:0px">
+
+    <div class="col-md-8">
+        <div class="row" style="width:100%;height:240px;margin:0px;border-bottom: 1px solid rgb(243, 241, 241);background: white">
+            <div class="col-md-5">
+                <div style="width:100%;height:88%;margin:15px 0px 0px 0px">
+                    <img [src]="url+'/'+venue?.image" alt="" style="width: 100%;height: 100%;">
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div style="margin: 15px 0px 0px 0px">
+                    <h1 title="Name" *ngIf="venue?.name.length >= 25">
+                        {{venue?.name.substr(0,25) | titlecase}}...</h1>
+                    <h1 title="Name" *ngIf="venue?.name.length <= 25">
+                        {{venue?.name.substr(0,25) | titlecase}}</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="card-body">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Age</td>
+                            <td>{{venue.age}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>AverageCostOfEntry</td>
+                            <td>{{venue.averageCostOfEntry}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>AverageCostOfTables</td>
+                            <td>{{venue.averageCostOfTables}}</td>
+                        </tr>
+                        <tr>
+                            <td>Capacity</td>
+                            <td>{{venue.capacity}}</td>
+                        </tr>
+
+
+
+                        <tr>
+                            <td>Product:</td>
+                            <td id="b">
+                                <span class="badge badge-outline-danger" *ngIf="venue.products.length === 0">N/A</span>
+                                <span *ngFor="let product of venue.products">
+                  <a routerLink="/product/view/{{product.id}}" class="badge badge-outline-danger">{{product.name | titlecase}}</a>
+                </span>
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div style="padding-top: 60px;background:white;position: relative;right:30px;">
+            <div style="width:100%;height:450px;padding: 5px;border:1px solid rgb(238, 238, 238);border-bottom:none;background:white;">
+                <agm-map [latitude]="lat" [longitude]="lng" [fullscreenControl]="false" [zoomControl]="false" [disableDoubleClickZoom]="true" [fullscreenControl]="false" [mapDraggable]="false" [streetViewControl]="false" style="width:100%;height:100%">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+                <!-- <br>
+                <div class="col-md-12">
+                    <h3 title="Name" *ngIf="venue?.name.length >= 25">
+                        {{venue?.name.substr(0,25) | titlecase}}...</h3>
+                    <h3 title="Name" *ngIf="venue?.name.length <= 25">
+                        {{venue?.name.substr(0,25) | titlecase}}</h3>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+
+</div>

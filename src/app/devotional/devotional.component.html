@@ -1,0 +1,60 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Devotionals
+</h4>
+<div class="float-right" style="margin-top: -65px">
+  <a routerLink="/devotional/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+    Create Devotional <i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+  </a>
+</div>
+
+
+
+<div class="card">
+
+  <table class="table card-table table table-hover">
+    <thead class="thead-light text-center">
+      <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>      
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let devotional of localdevotionalData; index as i">
+        <td>{{i+1}}</td>
+
+        <td class="align-middle py-3">
+          <div class="media align-items-center">
+            <img [src]="url+'/'+devotional?.imageUrl" class="d-block ui-w-40"
+              style="width: 100%;height: 100%;margin-left: 40%" alt="imgnotloading">
+            <div class="media-body flex-basis-auto pl-3">
+            </div>
+          </div>
+        </td>
+        
+        <td class="align-middle py-3" style="text-align: left">
+          <div>{{devotional.title}}</div>
+        </td>
+        <td class="py-3" style="text-align: left">
+          <div>{{devotional.description}}</div>
+        </td>
+        
+        <td class="align-middle py-3">
+          <a routerLink="/devotional/update/{{devotional.id}}">
+            <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+          </a>
+        </td>
+
+        <td class="align-middle py-3">
+          <a style="cursor: pointer"  routerLink="/devotional/delete/{{devotional.id}}">
+            <i class="fas fa-trash" style="color:#fc5a5c;font-size:17px"></i>
+          </a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

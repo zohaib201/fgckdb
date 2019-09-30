@@ -1,0 +1,68 @@
+<div class="media align-items-center py-3 mb-3">
+    <img [src]="url+'/'+productData.imageUrl" *ngIf="productData.imageUrl" alt="" class="d-block ui-w-100 rounded-circle">
+    <div class="media-body ml-4">
+        <h4 class="font-weight-bold mb-0">{{productData.name}} <span class="text-muted font-weight-normal">@{{productData.price}} </span></h4>
+        <div class="text-muted mb-2">ID: {{productData.id}}</div>
+        <!-- <a href="javascript:void(0)" class="btn btn-primary btn-sm">Edit</a>&nbsp; -->
+        <a routerLink="/product/update/{{productData.id}}">
+            <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+        </a>
+
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <table class="table user-view-table m-0">
+            <tbody>
+                <tr>
+                    <td>Type:</td>
+                    <td>{{productData.type}}</td>
+
+                </tr>
+
+                <tr>
+                    <td>Quantity:</td>
+                    <td>{{productData.quantity}}</td>
+
+                </tr>
+
+                <tr>
+                    <td>Deal:</td>
+                    <td>
+                        <span class="badge badge-outline-danger" *ngIf="productData.deal === null">N/A</span>
+                        <span class="badge badge-outline-danger" *ngIf="productData.deal !== null">{{productData.deal.name}}</span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Package:</td>
+                    <td id="b">
+                        <span class="badge badge-outline-danger" *ngIf="productData.packages.length === 0">N/A</span>
+                        <span *ngFor="let package of productData.packages">
+              <a routerLink="/package/view/{{package.id}}" class="badge badge-outline-danger">{{package.name}}</a>
+            </span>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Venue:</td>
+
+                    <td>
+                        <a routerLink="/venue/view/{{venue.id}}" class="badge badge-outline-danger">{{venue.name}}</a>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Status:</td>
+                    <td>
+                        <span class="badge badge-outline-danger">{{productData.status}}</span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>

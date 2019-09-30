@@ -1,0 +1,44 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Prayer Topics
+</h4>
+
+
+<div class="card">
+
+  <table class="table card-table table table-hover">
+      <thead class="thead-light">
+          <tr>
+              <th>#</th>
+              <th>Member Name</th>
+              <th>Email</th>
+              <th>Phone No</th>
+              <th>Description</th>
+              <th>Approval Status</th>
+              <th>Action</th>
+              <th class="text-center">Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+        
+          <tr *ngFor="let prayer of localPrayerData; index as i">
+              <td>{{i+1}}</td>
+
+              <td>{{prayer.memberName}}</td>
+              <td>{{prayer.email}}</td>
+              <td>{{prayer.whatsapp}}</td>
+              <td>{{prayer.description}}</td>
+              <td *ngIf="prayer.isApproved"><span class="badge badge-outline-success" *ngIf="prayer.isApproved" >Approved</span></td>
+              <td *ngIf="!prayer.isApproved"><span class="badge badge-outline-warning" *ngIf="!prayer.isApproved"> Pending</span></td>
+              <td>
+                  <a *ngIf="!prayer.isApproved" routerLink="/prayer/approve/{{prayer.id}}">
+                      <i  class="fas fa-check-double" style="padding-left: 15px; color: gray;font-size:17px"></i>
+                  </a>
+                <i *ngIf="prayer.isApproved" class="fas fa-check-double" style="padding-left: 15px; color:#0e77e0;font-size:17px"></i>
+              </td>
+            <td class="text-center" (click)="delprayer(prayer.id)">
+              <i class="fas fa-trash text-center" style="color: red;"></i>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

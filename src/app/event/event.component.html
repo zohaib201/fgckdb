@@ -1,0 +1,56 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  Events
+</h4>
+<div class="float-right" style="margin-top: -65px">
+  <a routerLink="/event/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+    Create Event <i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+  </a>
+</div>
+
+
+
+<div class="card">
+
+  <table class="table card-table table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Discription</th>
+        <th>Event Date</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of localeventData; index as i">
+        <td>{{i+1}}</td>
+        
+        <td class="align-middle py-3">
+          <div>{{event.title}}</div>
+        </td>
+        <td class="align-middle py-3">
+          <div>{{event.description}}</div>
+        </td>
+        <td class="align-middle py-3">
+          <div>{{event.date}}</div>
+        </td>
+        
+        <td class="align-middle py-3 text-center">
+          <a routerLink="/event/update/{{event.id}}">
+            <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+          </a>
+        </td>
+
+        <td class="align-middle py-3 text-center">
+          <a style="cursor: pointer"  routerLink="/event/delete/{{event.id}}">
+            <i class="fas fa-trash" style="color:#fc5a5c;font-size:17px"></i>
+          </a>
+        </td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

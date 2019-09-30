@@ -1,0 +1,51 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Products
+</h4>
+<div class="float-right" style="margin-top: -65px">
+    <a routerLink="/product/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+    Create Product <i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+   </a>
+</div>
+
+
+
+<div class="card">
+
+    <table class="table card-table table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Type</th>
+                <th>Venue</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of localProductData; index as i">
+                <td>{{i+1}}</td>
+                <td>
+                    <b><p routerLink="/product/view/{{product.id}}" class="name">{{product.name}}</p></b>
+                </td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.type}}</td>
+                <td>{{product.venue.name}}</td>
+                <td>
+                    <a routerLink="/product/update/{{product.id}}">
+                        <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+                    </a>
+
+                    <!-- <a routerLink="/product/view/{{product.id}}">
+                        <i class="fa fa-eye" aria-hidden="true" style="color:#fc5a5c;font-size:17px"></i>
+                    </a> -->
+                </td>
+
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

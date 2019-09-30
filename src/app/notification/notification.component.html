@@ -1,0 +1,41 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Notification
+</h4>
+<div class="float-right" style="margin-top: -65px">
+    <a routerLink="/notification/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+        Create Notification <i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+    </a>
+</div>
+
+
+
+<div class="card">
+
+    <table class="table card-table table table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Title</th>
+            <th class="text-center">Description</th>
+            <th class="text-center">Delete</th>
+         </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let d of data; index as i">
+            <td class="text-center">{{i+1}}</td>
+
+            <td class="align-middle py-3 text-center">
+                <div>{{d.title}}</div>
+            </td>
+            <td class="align-middle py-3 text-center">
+                <div>{{d.description}}</div>
+            </td>
+
+            <td style="cursor: pointer"  routerLink="/notification/delete/{{d.id}}" class="align-middle py-3 text-center"><i class="fas fa-trash" style="color: red"></i></td>
+
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>

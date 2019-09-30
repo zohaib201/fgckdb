@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ee804ee7-0111-495d-bb2f-fb0654ea9371" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/kwtc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashb.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fgck-form/add-fgck-form/add-fgck-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fgck-form/add-fgck-form/add-fgck-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fgck-form/add-fgck-form/add-fgck-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fgck-form/add-fgck-form/add-fgck-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fgck-form/fgck-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fgck-form/fgck-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fgck-form/fgck-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fgck-form/fgck-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fgck-form/fgck-form.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fgck-form/fgck-form.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fgck-form/update-fgck-form/update-fgck-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fgck-form/update-fgck-form/update-fgck-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/layout-sidenav/layout-sidenav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/layout-sidenav/layout-sidenav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/member-from-app/member-from-app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/member-from-app/member-from-app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Prr0TRINdMSZ5Fu4mXzXI1DxTd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\dashb\src\assets\img" />
+      <recent name="C:\projects\dashb\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee804ee7-0111-495d-bb2f-fb0654ea9371" name="Default" comment="" />
+      <created>1562826239726</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562826239726</updated>
+      <workItem from="1562826241971" duration="3063000" />
+      <workItem from="1562857962553" duration="14927000" />
+      <workItem from="1562963630335" duration="2690000" />
+      <workItem from="1563109909993" duration="61000" />
+      <workItem from="1563302730268" duration="10151000" />
+      <workItem from="1563534541839" duration="8545000" />
+      <workItem from="1563607120660" duration="7897000" />
+      <workItem from="1566132733238" duration="7722000" />
+      <workItem from="1566150031487" duration="870000" />
+      <workItem from="1566151029430" duration="11016000" />
+      <workItem from="1566240273018" duration="58000" />
+      <workItem from="1566410772270" duration="5169000" />
+      <workItem from="1566642843676" duration="78000" />
+      <workItem from="1566651310386" duration="1646000" />
+      <workItem from="1566654572480" duration="12775000" />
+      <workItem from="1566929088920" duration="5454000" />
+      <workItem from="1567001121821" duration="1876000" />
+      <workItem from="1567191272230" duration="15803000" />
+      <workItem from="1567353970282" duration="12748000" />
+      <workItem from="1567548440311" duration="10000" />
+      <workItem from="1567587190393" duration="1750000" />
+      <workItem from="1567664393417" duration="1910000" />
+      <workItem from="1567780605574" duration="236000" />
+      <workItem from="1567782557351" duration="2816000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

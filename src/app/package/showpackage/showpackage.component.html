@@ -1,0 +1,51 @@
+<div class="media align-items-center py-3 mb-3">
+    <img [src]="" *ngIf="" alt="" class="d-block ui-w-100 rounded-circle">
+    <div class="media-body ml-4">
+        <h4 class="font-weight-bold mb-0">{{packageData.name}} <span class="text-muted font-weight-normal">@{{packageData.dicountedPrice}} </span></h4>
+        <div class="text-muted mb-2">ID: {{packageData.id}}</div>
+
+        <a routerLink="/package/update/{{packageData.id}}">
+            <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+        </a>
+
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <table class="table user-view-table m-0">
+            <tbody>
+                <tr>
+                    <td>Actual Price:</td>
+                    <td>{{packageData.actualPrice}}</td>
+                </tr>
+
+                <tr>
+                    <td>Discounted Price:</td>
+                    <td>{{packageData.dicountedPrice}}</td>
+                </tr>
+
+                <tr>
+                    <td>Dsiscount Rate:</td>
+                    <td>{{packageData.discountRate}}</td>
+                </tr>
+
+                <tr>
+                    <td>Dsiscount Amount:</td>
+                    <td>{{packageData.discountAmount}}</td>
+                </tr>
+
+                <tr>
+                    <td>Product:</td>
+                    <td id="b">
+                        <span class="badge badge-outline-danger" *ngIf="products.length === 0">N/A</span>
+                        <span *ngFor="let product of products">
+              <a routerLink="/product/view/{{product.id}}" class="badge badge-outline-danger">{{product.name}}</a>
+            </span>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,58 @@
+<div class="authentication-wrapper authentication-3">
+    <div class="authentication-inner">
+  
+       
+  
+      <!-- Form container -->
+      <div class="col-8 offset-2">
+        <!-- Inner container -->
+        <!-- Have to add `.d-flex` to control width via `.col-*` classes -->
+        <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
+          <div class="w-100">
+            <!-- Logo -->
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="">
+                <div style="display: block;margin: auto;margin-top: 50px">
+                  <img src="../../assets/img/logo.png" height="100" alt="" style="border-radius: 100px">
+                </div>
+              </div>
+            </div>
+            <!-- / Logo -->
+  
+            <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Create Your Account</h4>
+  
+            <!-- Form -->
+            <form class="my-5">
+              <div class="form-group">
+                <label class="form-label">Username</label>
+                <input [(ngModel)]="credentials.userName" name="userName" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input [(ngModel)]="credentials.email" name="email" type="text" class="form-control">
+                </div>
+              <div class="form-group">
+                <label class="form-label d-flex justify-content-between align-items-end">
+                  <div>Password</div>
+                 </label>
+                <input [(ngModel)]="credentials.password" name="password" type="password" class="form-control">
+              </div>
+              <p class="text-danger"> <b>{{msg}}</b></p>
+              <div class="d-flex justify-content-between align-items-center m-0">
+                
+                <button type="button" (click)="signup()" class="btn btn-primary btn-block">Create Account </button>
+              </div>
+            </form>
+            <!-- / Form -->
+  
+            <div class="text-center text-muted" style="margin-top: -30px !important">
+              I have an account <a routerLink="/login"><b>Login Now</b></a>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <!-- / Form container -->
+  
+    </div>
+  </div>

@@ -1,0 +1,50 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Packages
+</h4>
+<div class="float-right" style="margin-top: -65px">
+    <a routerLink="/package/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+    Create Package<i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+   </a>
+</div>
+
+
+
+<div class="card">
+
+    <table class="table card-table table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Package Name</th>
+                <th>Actual Price</th>
+                <th>Dicounted Price</th>
+                <th>Discount Rate</th>
+                <th>Discount Amount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let package of localPackageData; index as i">
+                <td>{{i+1}}</td>
+                <td>
+                    <b> <p routerLink="/package/view/{{package.id}}" class="name">{{package.name}}</p></b>
+                </td>
+                <td>{{package.actualPrice}}</td>
+                <td>{{package.dicountedPrice}}</td>
+                <td>{{package.discountRate}}</td>
+                <td>{{package.discountAmount}}</td>
+                <td>
+                    <a routerLink="/package/update/{{package.id}}">
+                        <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+                    </a>
+                    <!-- <a routerLink="/package/view/{{package.id}}">
+                        <i class="fa fa-eye" aria-hidden="true" style="color:#fc5a5c;font-size:17px"></i>
+                    </a> -->
+                </td>
+
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

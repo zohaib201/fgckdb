@@ -1,0 +1,66 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Add Report
+</h4>
+
+<div class="row">
+  <div class="offset-2  col-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="cui-example">
+          <form>
+             
+               
+
+            
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="form-label"><b>Amount</b></label>
+                    <input [(ngModel)]="data.amount" type="number" class="form-control" placeholder="amount" name="amount">
+                  </div>
+                </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="form-label"><b>Description</b></label>
+                <input [(ngModel)]="data.description" type="text" class="form-control" placeholder="Description" name="Name of Spouse">
+              </div>
+            </div>
+
+           
+
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="form-label"><b>Date</b></label>
+                    <input [(ngModel)]="data.date" type="date" class="form-control" placeholder="Date" name="Name of Spouse">
+                  </div>
+                </div>
+
+
+              <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="form-label"><b>Select member</b></label>
+                    <select [(ngModel)]="mid" name="j" class="form-control"> 
+                        <option value="Select Member">Select Member</option> 
+                      <option *ngFor="let obj of member" [value]="obj.id">{{obj.name}}</option>
+                    </select>                 
+                   </div>
+                </div>
+                <br>
+ 
+              
+
+             
+            <button type="button" (click)="create()" class="btn btn-primary float-right">Add Report</button>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+ 

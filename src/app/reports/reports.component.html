@@ -1,0 +1,38 @@
+<h4 class="font-weight-bold py-3 mb-4">
+        Report
+      </h4>
+      <div class="float-right" style="margin-top: -65px">
+        <a routerLink="/report/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+          Create Report <i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+        </a>
+      </div>
+      
+      
+      
+      <div class="card">
+      
+        <table class="table card-table table table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th>#</th>
+              <th>Description</th>
+              <th>Date</th>      
+              <th>Amount</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let report of all; index as i">
+              <td>{{i+1}}</td>
+              <td>{{report.description}}</td>
+              <td>{{report.date | date: 'dd/MM/yyyy'}}</td>
+              <td>{{report.amount}}</td>
+              <td class="text-center">
+                  <a routerLink="/report/update/{{report.id}}">
+                    <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+                  </a>
+              </td>
+             </tr>
+          </tbody>
+        </table>
+      </div>

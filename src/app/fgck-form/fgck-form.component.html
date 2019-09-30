@@ -1,0 +1,159 @@
+<!-- `.clients-wrapper` fills all available space of container -->
+<div class="clients-wrapper" >
+
+  <!-- `.clients-content` fills all available space of `clients-wrapper` -->
+  <div class="clients-content clients-scroll container-p-x container-p-y">
+
+    <!-- Header -->
+    <h4 class="d-flex flex-wrap justify-content-between align-items-center font-weight-bold pt-2 mb-4">
+      <div class="mb-2">FGCK Members</div>
+    </h4>
+
+    <div class="spinner-border" *ngIf="(localMemberData.length === 0)"
+         style="display: block;margin: auto"></div>
+    <br>
+    <!-- / Header -->
+
+    <!-- Clients list -->
+    <div class="">
+      <table class="clients-table table table-hover m-0">
+        <thead>
+          <tr>
+            <td><b>FGCK Member</b></td>
+            <td><b>Child</b></td>
+            <td><b>Grand Child</b></td>
+            <td><b>Landline</b></td>
+            <td><b>Mobile</b></td>
+            <td><b>Email</b></td>
+            <td><b>Status</b></td>
+            <td><b>Action</b></td>
+            <td><b>Edit</b></td>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- && sideboxOpened -->
+          <tr *ngFor="let member of localMemberData" [ngClass]="{'bg-light': selected === member }"
+            (click)="selectMember(member)">
+            <td class="align-middle py-3">
+              <div class="media align-items-center">
+                <img [src]="url+'/'+member?.family_photo" class="d-block ui-w-40"
+                  style="width: 100%;height: 100%;" alt="imgnotloading">
+                <div class="media-body flex-basis-auto pl-3">
+                  <div>{{member.name}}</div>
+                  <div class="text-muted small">(Spouse) {{member.spouse}}</div>
+                </div>
+              </div>
+            </td>
+
+            <td class="align-middle py-3">
+              <div *ngFor="let child of member.children; index as i"><span>{{child?.name}}</span></div>
+            </td>
+            <td class="align-middle py-3">
+              <div *ngFor="let grandchild of member.grand_children; index as i"><span>{{grandchild?.name}}</span></div>
+            </td>
+            <td class="align-middle py-3">
+              <div>{{'Whatsapp'}}</div>
+              <div class="text-muted small">{{member.primary_whatsapp}}</div>
+              <div>{{'Kuwait'}}</div>
+              <div class="text-muted small">{{member.landline_kuwait}}</div>
+              <div>{{'International'}}</div>
+              <div class="text-muted small">{{member.landline_international}}</div>
+            </td>
+            <td class="align-middle py-3">
+                <div>{{'Kuwait'}}</div>
+                <div class="text-muted small">{{member.mobile1_kuwait}}</div>
+                <div class="text-muted small">{{member.mobile2_kuwait}}</div>
+                <div>{{'International'}}</div>
+                <div class="text-muted small">{{member.mobile1_international}}</div>
+                <div class="text-muted small">{{member.mobile2_international}}</div>
+              </td>
+            <td class="align-middle py-3">
+                <div class="text-muted small">{{member.email_id1}}</div>
+                <div class="text-muted small">{{member.email_id2}}</div>
+            </td>
+
+            <td class="align-middle py-3" *ngIf="!member.isBlocked"><span class="badge badge-outline-success" *ngIf="!member.isBlocked" >Active</span></td>
+
+            <td class="align-middle py-3" *ngIf="member.isBlocked"><span class="badge badge-outline-danger" *ngIf="member.isBlocked"> Inactive</span></td>
+
+
+                <td class="align-middle py-3">
+                    <a *ngIf="!member.isBlocked" routerLink="/fgck-form/approve/{{member.memberFromAppId}}">
+                        <i *ngIf="!member.isBlocked" class="fas fa-window-close" style="padding-left: 15px; color:#fc5a5c;font-size:17px" ></i>
+                    </a>
+
+                    <a *ngIf="member.isBlocked" routerLink="/fgck-form/unapprove/{{member.memberFromAppId}}">
+                      <i *ngIf="member.isBlocked" class="fas fa-check" style="padding-left: 15px; color:#30a86c;font-size:17px"></i>
+
+                  </a>
+                </td>
+
+
+
+
+            <td class="align-middle py-3">
+              <button class="btn btn-sm btn-warning" (click)="updateRecord(member)">Edit</button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <!-- / Clients list -->
+
+  </div><!-- / .clients-content -->
+
+  <!-- Clients sidebox -->
+  <!--<div class="clients-sidebox">-->
+    <!--<a (click)="closeSidebox()" href="javascript:void(0)"-->
+      <!--class="clients-sidebox-close text-muted text-xlarge font-weight-light">&times;</a>-->
+
+    <!--<div *ngIf="selected" class="clients-scroll container-p-y">-->
+
+      <!--&lt;!&ndash; Client info &ndash;&gt;-->
+      <!--<div class="text-center p-4">-->
+        <!--<img [src]="'assets/img/avatars/' + selected.avatar" class="ui-w-100 rounded-circle mb-4" alt="">-->
+        <!--<h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">{{selected.name}}</a></h5>-->
+        <!--<div class="text-muted small mb-2">@{{selected.username}}</div>-->
+        <!--<div class="small mb-4" *ngIf="selected.company || selected.phone">-->
+          <!--<div *ngIf="selected.company">{{selected.company}}</div>-->
+          <!--<div *ngIf="selected.phone">{{selected.phone}}</div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<a href="javascript:void(0)" class="text-secondary"><span class="ion ion-md-mail"></span></a> &nbsp;&nbsp;-->
+          <!--<a href="javascript:void(0)" class="text-secondary"><span class="ion ion-ios-chatbubbles"></span></a>-->
+          <!--&nbsp;&nbsp;-->
+          <!--<span class="text-lighter">|</span> &nbsp;&nbsp;-->
+          <!--<a href="javascript:void(0)" class="text-twitter"><span class="ion ion-logo-twitter"></span></a> &nbsp;&nbsp;-->
+          <!--<a href="javascript:void(0)" class="text-facebook"><span class="ion ion-logo-facebook"></span></a>-->
+          <!--&nbsp;&nbsp;-->
+          <!--<a href="javascript:void(0)" class="text-instagram"><span class="ion ion-logo-instagram"></span></a>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; / Client info &ndash;&gt;-->
+
+      <!--<hr class="border-light m-0">-->
+
+      <!--&lt;!&ndash; Messages &ndash;&gt;-->
+      <!--<div class="p-4">-->
+        <!--<h6 class="mb-3">Messages</h6>-->
+
+        <!--<div *ngIf="selected.messages">-->
+          <!--<div *ngFor="let message of selected.messages; let i = index" class="ui-bordered py-2 px-3"-->
+            <!--[ngClass]="{'mb-3': i !== (selected.messages.length - 1)}">-->
+            <!--{{message.content}}-->
+            <!--<div class="text-muted small mt-1">{{message.date}} ago &nbsp; | &nbsp; <a href="javascript:void(0)"-->
+                <!--class="text-muted">Reply</a></div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div *ngIf="!selected.messages" class="text-lighter my-4">No messages</div>-->
+      <!--</div>-->
+      <!--&lt;!&ndash; / Messages &ndash;&gt;-->
+
+    <!--</div>-->
+  <!--</div>-->
+  <!-- / Clients sidebox -->
+
+</div>
+<!-- / Clients wrapper -->

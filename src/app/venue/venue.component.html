@@ -1,0 +1,47 @@
+<h4 class="font-weight-bold py-3 mb-4">
+    Venue
+</h4>
+
+<div class="float-right" style="margin-top: -65px">
+    <a routerLink="/venue/create" class="btn btn-outline-primary btn-rounded  btn-sm">
+    Create Venue <i class="fa fa-plus-square" aria-hidden="true" style="color: rgb(248, 244, 244)"></i>
+  </a>
+</div>
+
+<div class="card">
+
+    <table class="table card-table table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Venue Name</th>
+                <th>Location Name</th>
+                <th>Age</th>
+                <th>Capacity</th>
+                <th>Average Cost Of Entry</th>
+                <th>Average Cost Of Table</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let venue of localVenueData; index as i">
+                <td>{{i+1}}</td>
+                <td>
+                    <b><p routerLink="/venue/view/{{venue.id}}" class="name">{{venue.name}}</p></b>
+                </td>
+                <td>{{venue.location}}</td>
+                <td>{{venue.age}}</td>
+                <td>{{venue.capacity}}</td>
+                <td>{{venue.averageCostOfEntry}}</td>
+                <td>{{venue.averageCostOfTables}}</td>
+                <td>
+                    <a routerLink="/venue/update/{{venue.id}}">
+                        <i class="fas fa-edit" style="color:#fc5a5c;font-size:17px"></i>
+                    </a>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
